@@ -3,9 +3,6 @@
 
 @include('partials/_tweet_form', ['tweet' => null])
 
-<div class="tweet--list" id="tweet--list">
-  <div class="tweet--item"></div>
-</div>
 
 @if (count($tweets) > 0)
 <ul>
