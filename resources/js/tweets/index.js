@@ -24,7 +24,7 @@
 //       $('#tweet--list').append(
 //         `
 //         <div class="card tweetitem--card">
-//           <div class="card-body tweetitem--body>
+//           <div class="card-body tweetitem--body">
 //             <div class="tweet--item">${element.body}</div>
 //           </div>
 //           <div class="card-footer tweetitem--body>
