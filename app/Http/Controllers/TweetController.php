@@ -85,7 +85,6 @@ class TweetController extends Controller
 
     public function destroy(Tweet $tweet)
     {
-        dd($tweet);
         Tweet::where([['id', $tweet->id]])->delete();
         return redirect()->route('tweets.index');
     }
