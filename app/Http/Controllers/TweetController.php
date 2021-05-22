@@ -35,18 +35,15 @@ class TweetController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-           'body' => 'required|max:140' ,
-           'like_count' => 'required|integer|min:0',
-           'rt_count' => 'required|integer|min:0',
-           'quote_count' => 'required|integer|min:0',
+           'body' => 'required|max:140'
         ]);
 
         Tweet::create([
             'user_id' => auth()->id(), 
             'body' => $request->body,
-            'like_count' => $request->like_count ? $request->like_count : 0,
-            'rt_count' => $request->rt_count ? $request->rt_count  : 0,
-            'quote_count' => $request->quote_count ? $request->quote_count : 0,
+            'like_count' => 0,
+            'rt_count' => 0,
+            'quote_count' => 0,
         ]);
         
         return redirect()->route('tweets.index');
@@ -67,7 +64,6 @@ class TweetController extends Controller
     }
     public function update(Request $request, Tweet $tweet)
     {
-        // dd($request);
         $request->validate([
             'body' => 'required|max:140',
             'like_count' => 'required|integer|min:0',

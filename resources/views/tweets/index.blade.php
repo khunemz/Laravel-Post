@@ -2,7 +2,7 @@
 @section('content')
 <h2>Twitter index</h2>
 
-<div><a href="{{ route('tweets.create') }}">Say something</a></div>
+@include('partials/_tweet_form', ['tweet' => null])
 @if (count($tweets) > 0)
 <ul>
   @foreach ($tweets as $tweet)
