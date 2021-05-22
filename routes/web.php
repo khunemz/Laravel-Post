@@ -19,7 +19,9 @@ use App\Http\Controllers\TweetController;
 // });
 
 Route::resource('tweets', TweetController::class);
+Route::get('/', [TweetController::class, 'index'])->name('home');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
