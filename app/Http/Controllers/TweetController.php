@@ -17,10 +17,6 @@ class TweetController extends Controller
 
     public function index()
     {
-        // no used
-        // $tweets = DB::select(DB::raw('SELECT t.body, t.updated_at, u.id , u.name
-        //     FROM `tweets` t inner join `users` u on t.user_id = u.id'));
-
         $tweets = Tweet::orderByDesc('updated_at')->get();
         
         return view('tweets.index',[

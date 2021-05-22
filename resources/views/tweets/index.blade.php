@@ -1,8 +1,12 @@
 @extends('layouts.default')
 @section('content')
-<h2>Twitter index</h2>
 
 @include('partials/_tweet_form', ['tweet' => null])
+
+<div class="tweet--list" id="tweet--list">
+  <div class="tweet--item"></div>
+</div>
+
 @if (count($tweets) > 0)
 <ul>
   @foreach ($tweets as $tweet)
